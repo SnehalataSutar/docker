@@ -33,19 +33,19 @@ A hypervisor is sometimes also called a virtual machine manager(VMM).
 <h5>There are two main types:</h5>
 Type 1 Hypervisor (Bare-metal): <b>Definition:</b> Runs directly on physical hardware (no host OS). It manages guest operating systems natively. 
 <b>Examples:</b>
-  VMware ESXi
-  Microsoft Hyper-V (on Windows Server)
-  KVM (Kernel-based Virtual Machine)
-  Xen
-
+ 1. VMware ESXi
+ 2. Microsoft Hyper-V (on Windows Server)
+ 3. KVM (Kernel-based Virtual Machine)
+ 4. Xen
+  
 Type 2 Hypervisor (Hosted): <b>Definition: </b>Runs on top of a host operating system (like an app) and uses it to manage hardware resources. 
 <b>Examples:</b>
-  Oracle VirtualBox
-  VMware Workstation
-  VMware Fusion (macOS)
-  Parallels Desktop (macOS)
+ 1. Oracle VirtualBox
+ 2. VMware Workstation
+ 3. VMware Fusion (macOS)
+ 4. Parallels Desktop (macOS)
 
-<h5>Comparison between Virtualization and Containerization: </h5>
+<h3>Comparison between Virtualization and Containerization: </h3>
 <b>Virtualization: </b>
 A VM is like a computer inside a computer, running its own OS and apps, but using shared physical resources.
 Requires a hypervisor to manage and allocate resources to the VMs.
