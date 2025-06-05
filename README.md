@@ -31,22 +31,22 @@ The hypervisor is a hardware virtualization technique that allows multiple guest
 A hypervisor is sometimes also called a virtual machine manager(VMM). 
 
 <h5>There are two main types:</h5>
-Type 1 Hypervisor (Bare-metal): <h6>Definition:</h6> Runs directly on physical hardware (no host OS). It manages guest operating systems natively. 
-<h6>Examples:</h6>
-VMware ESXi
-Microsoft Hyper-V (on Windows Server)
-KVM (Kernel-based Virtual Machine)
-Xen
+Type 1 Hypervisor (Bare-metal): <b>Definition:</b> Runs directly on physical hardware (no host OS). It manages guest operating systems natively. 
+<b>Examples:</b>
+  VMware ESXi
+  Microsoft Hyper-V (on Windows Server)
+  KVM (Kernel-based Virtual Machine)
+  Xen
 
-Type 2 Hypervisor (Hosted): <h6>Definition: </h6>Runs on top of a host operating system (like an app) and uses it to manage hardware resources. 
-<h6>Examples:</h6>
-Oracle VirtualBox
-VMware Workstation
-VMware Fusion (macOS)
-Parallels Desktop (macOS)
+Type 2 Hypervisor (Hosted): <b>Definition: </b>Runs on top of a host operating system (like an app) and uses it to manage hardware resources. 
+<b>Examples:</b>
+  Oracle VirtualBox
+  VMware Workstation
+  VMware Fusion (macOS)
+  Parallels Desktop (macOS)
 
 <h5>Comparison between Virtualization and Containerization: </h5>
-<h6>Virtualization: </h6>
+<b>Virtualization: </b>
 A VM is like a computer inside a computer, running its own OS and apps, but using shared physical resources.
 Requires a hypervisor to manage and allocate resources to the VMs.
 VMs consume more resources than containers, requiring more memory and CPU.
@@ -54,7 +54,7 @@ VMs offer high isolation, making them suitable for security-sensitive applicatio
 VMs take longer to boot up compared to containers.
 It is Hardware-level virtualization.
 
-<h6>Containerization:</h6>
+<b>Containerization:</b>
 Containers share the host operating system.
 Containers are smaller and lightweight than VMs.
 Containers starts quickly because they don't require a full operating system.
