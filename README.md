@@ -30,7 +30,8 @@ A repository where developers can pull images from and push custom images to sha
 The hypervisor is a hardware virtualization technique that allows multiple guest operating systems (OS) to run on a single host system at the same time. 
 A hypervisor is sometimes also called a virtual machine manager(VMM). 
 
-<h5>There are two main types:</h5>
+<h4>There are two main types:</h4>
+
 Type 1 Hypervisor (Bare-metal): <b>Definition:</b> Runs directly on physical hardware (no host OS). It manages guest operating systems natively. 
 <b>Examples:</b>
  1. VMware ESXi
@@ -67,6 +68,14 @@ It is OS-level virtualization.
 <h4>Docker Commands:</h4>
 
 ![Screenshot (66)](https://github.com/user-attachments/assets/dc38c130-c904-4c79-a15b-3a67bb2624f8)
+
+<h3>Volume</h3>
+Docker volume mount:
+Docker creates and manages a persistent storage location, typically under /var/lib/docker/volumes/.
+managed by Docker
+Useful for data persistence, portability, and backups.
+Safer and more robust for production use.
+Can be easily shared between containers.
 
 
 
