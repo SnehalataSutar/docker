@@ -1,53 +1,55 @@
-<h1>Docker</h1>
+# Docker
 
-<h2> What is Docker? </h2>
+### What is Docker? 
 Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
 
-<h2>Containers:</h2>
+### Containers:
 A Docker Container is a running instance of an image.
 A container is a lightweight, standalone, and executable package that contains everything needed to run an application.
 Containers are created form images.
 Containers are isolated from each other and the host system.
 
-<h2>Images:</h2>
+### Images:
 A Docker Image is a read-only template that contains the application code, libraries, and dependencies.
 Images are usually built from a Dockerfile.
 
-<h2>Dockerfile:</h2>
+### Dockerfile:
 A text file with instructions for building a Docker image.
 
-<h2>Docker Engine: </h2>
+### Docker Engine:
 The core of docker, which creates and runs containers on the host operating system.
 
-<h2>Docker Hub: </h2>
+### Docker Hub: 
 A repository where developers can pull images from and push custom images to share them.
 
-<h2>Virtualization VS Containerization: </h2>
-<h4>Virtualization</h4> allows you to split that computer into several virtual machines (VMs), each acting like a separate computer with its operating system and applications. 
-<h4>Containerization</h4> uses lightweight containers that share the host operating system kernel, resulting in faster start-up times, better resource utilization.
+### Virtualization VS Containerization: 
+#### Virtualization
+ allows you to split that computer into several virtual machines (VMs), each acting like a separate computer with its operating system and applications. 
+#### Containerization
+ uses lightweight containers that share the host operating system kernel, resulting in faster start-up times, better resource utilization.
 
-<h2>What is hypervisor and types of hypervisor:</h2>
+### What is hypervisor and types of hypervisor:
 The hypervisor is a hardware virtualization technique that allows multiple guest operating systems (OS) to run on a single host system at the same time. 
 A hypervisor is sometimes also called a virtual machine manager(VMM). 
 
-<h4>There are two main types:</h4>
+#### There are two main types:
 
 Type 1 Hypervisor (Bare-metal): <b>Definition:</b> Runs directly on physical hardware (no host OS). It manages guest operating systems natively. 
-<b>Examples:</b>
+#### Examples:
  1. VMware ESXi
  2. Microsoft Hyper-V (on Windows Server)
  3. KVM (Kernel-based Virtual Machine)
  4. Xen
   
 Type 2 Hypervisor (Hosted): <b>Definition: </b>Runs on top of a host operating system (like an app) and uses it to manage hardware resources. 
-<b>Examples:</b>
+#### Examples:
  1. Oracle VirtualBox
  2. VMware Workstation
  3. VMware Fusion (macOS)
  4. Parallels Desktop (macOS)
 
-<h3>Comparison between Virtualization and Containerization: </h3>
-<b>Virtualization: </b>
+### Comparison between Virtualization and Containerization: 
+#### Virtualization: 
 A VM is like a computer inside a computer, running its own OS and apps, but using shared physical resources.
 Requires a hypervisor to manage and allocate resources to the VMs.
 VMs consume more resources than containers, requiring more memory and CPU.
@@ -55,7 +57,7 @@ VMs offer high isolation, making them suitable for security-sensitive applicatio
 VMs take longer to boot up compared to containers.
 It is Hardware-level virtualization.
 
-<b>Containerization:</b>
+#### Containerization:
 Containers share the host operating system.
 Containers are smaller and lightweight than VMs.
 Containers starts quickly because they don't require a full operating system.
@@ -65,9 +67,33 @@ It is OS-level virtualization.
 
 ![Screenshot (65)](https://github.com/user-attachments/assets/4a7d42f6-2988-40fa-b33c-a0395f91a249)
 
-<h4>Docker Commands:</h4>
+## Docker Commands:
 
-![Screenshot (66)](https://github.com/user-attachments/assets/dc38c130-c904-4c79-a15b-3a67bb2624f8)
+| Command        | Description           | 
+|-------------|----------------|
+| docker pull nginx:latest    |  Downloads the latest nginx from Docker Hub      | 
+| docker images  | Lists all docker images available | 
+| docker run -d --name nginx_container -p 80:80 spider nginx:latest | Runs an nginx container in detched mode, maps host port 80 to container port 80, and names it nginx_container. |
+| docker ps | Lists running containers |
+| docker ps -a | Listes all containers, including stopped ones |
+| docker kill containerID/name | Forcefully stops a running container immediately |
+| docker inspect containerID/name | Displays detailed information about a container |
+| docker exec -it containerID/name bash | Opens an interactive Bash shell inside a running container|
+| docker rm -f containerID/name | Removes a container (even if it is running) |
+| docker ps -q | Lists only the container IDs of all containers |
+| docker stop containerID/name | Stops a running container |
+| docker start containerID/name | Starts a stopped container |
+| docker container prune | Removes all stopped containers |
+| docker image prune | Removes unused images |
+| docker commit containerID/name | Creates a new image from a containers current state |
+| docker tag containerID/name imgName:tag | Tags an image with a new name and tag |
+| docker login | Logs into docker hub |
+| docker push imgName:tag | Pushes a tagged image to docker hub |
+| docker run -d -it --name ubuntu_container -p 80:80 ubuntu | This will keep the container running until you manually exit 
+
+
+
+
 
 <h3>Volume</h3>
 Docker volume mount:
