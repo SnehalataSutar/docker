@@ -91,7 +91,85 @@ It is OS-level virtualization.
 | docker push imgName:tag | Pushes a tagged image to docker hub |
 | docker run -d -it --name ubuntu_container -p 80:80 ubuntu | This will keep the container running until you manually exit 
 
+### How to write Dockerfile 
+```
+FROM alpine:latest
 
+RUN apk update && apk add --no-cache apache2 
+
+ENV project=devops
+
+WORKDIR /var/www/localhost/htdocs
+
+COPY index.html .
+
+EXPOSE 80
+
+CMD [ "/usr/sbin/httpd", "-D", "FOREGROUND" ]
+```
+### Description of above Dockerfile - 
+
+FROM Statement is used for base image.
+
+Updates package index and installs Apache HTTP Server without caching interim files, keeping the image slim.
+
+Sets an environment variable project with the value devops.
+
+Sets the working directory.
+
+Copies your local index.html into /var/www/localhost/htdocs/index.html in the container.
+
+Declares that the container listens on port 80.
+
+Defines the default process to run when the container starts—Apache in the foreground, ensuring the container stays alive.
+
+### Multistage Docker Build 
+
+In Multistage build there is more than one FROM statement is used in Dockerfile.
+```
+FROM golang:1.24
+WORKDIR /src
+COPY <<EOF ./main.go
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("hello, world")
+}
+EOF
+RUN go build -o /bin/hello ./main.go
+
+FROM scratch
+COPY --from=0 /bin/hello /bin/hello
+CMD ["/bin/hello"]
+```
+### Difference between CMD & ENTRYPOINT
+ENTRYPOINT specifies the main fixed executable for the container—it always runs unless overridden with --entrypoint.
+
+CMD provides default arguments or a default command that’s used only if no override is provided via docker run.
+
+If both are set, CMD supplies arguments to the ENTRYPOINT executable.
+
+In short: ENTRYPOINT = what runs, CMD = how it runs (by default).
+
+### Docker Compose - 
+
+
+```
+version: "3"
+services:
+  webserver:
+   image: snehalatasutar/docker_practice:v1
+   ports: 
+    - 80:80
+   environment:
+    - department=dev
+  backend:
+   image: snehalatasutar/docker_practice:alpine
+   ports:
+    - 8080:80
+```
 
 
 
