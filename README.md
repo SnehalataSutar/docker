@@ -213,8 +213,6 @@ Sharing data between multiple containers
 Links a host directory to a container directory
 
 #### ✅ Key Features:
-Host path is explicitly specified
-
 Useful for development (you can edit files on the host and see changes live in the container)
 
 More flexible, but less secure and harder to manage
