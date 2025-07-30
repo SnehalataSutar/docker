@@ -184,7 +184,7 @@ Safer and more robust for production use.
 Can be easily shared between containers.
 
 
-### 🧱 1. Volume Mount
+### 1. Volume Mount
 
 
 #### ✅ Key Features:
@@ -209,7 +209,7 @@ Storing databases, logs, app data that must persist
 
 Sharing data between multiple containers
 
-### 📁 2. Bind Mount
+### 2. Bind Mount
 Links a host directory to a container directory
 
 #### ✅ Key Features:
